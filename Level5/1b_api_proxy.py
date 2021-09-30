@@ -13,7 +13,11 @@ API_URL = 'https://jsonplaceholder.typicode.com/todos/'
 
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>Simple API Proxy</h1><p>This is a simple API Proxy of" + API_URL + ".</p>"
+    link1 = "http://127.0.0.1:5000/api/v1/resources/todos?completed=False&name=harry"
+    link2 = "http://127.0.0.1:5000/api/v1/resources/todos?completed=True"
+    alink1 = '<a href="' + link1 + '" target="_blank">Filtering by completed and name</a>'
+    alink2 = '<a href="' + link2 + '" target="_blank">Filtering by completed</a>'
+    return "<h1>Simple API Proxy</h1><p>This is a simple API Proxy  " + API_URL + ".</p><br>" + alink1 + "<br>" + alink2
 
 
 @app.route('/api/v1/resources/todos/all', methods=['GET'])

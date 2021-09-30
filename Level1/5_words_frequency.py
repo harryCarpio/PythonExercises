@@ -1,10 +1,13 @@
-#Write a Python program to count the frequency of words in a text file
+# Write a Python program to count the frequency of words in a text file
 import re
+import os
 
-filepath="res/moby_dick.txt"
-file = open(filepath, "r")
+filepath = "res/moby_dick.txt"
+absolute_filepath = os.path.dirname(__file__) + os.sep + filepath
 
-punctuation_signs = [',','.','!','?','-',':',';']
+file = open(absolute_filepath, "r")
+
+punctuation_signs = [',', '.', '!', '?', '-', ':', ';']
 
 words_count = {}
 
